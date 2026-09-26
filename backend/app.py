@@ -8,11 +8,8 @@ from flask import Flask, request, jsonify  # For creating the Flask API
 # Initialize Flask app with a name
 superkart_api = Flask("SuperKart")
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(BASE_DIR, "random_forest_tuned_model.joblib")
-
 # Load the trained model
-model = joblib.load(model_path)
+model = joblib.load("superkart_model.joblib")
 
 # Define a route for the home page
 @superkart_api.get('/')
